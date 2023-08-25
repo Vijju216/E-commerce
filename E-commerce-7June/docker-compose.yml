@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - mynetwork
+  # Add other services if your application needs them
+networks:
+  mynetwork:
+    driver: bridge
